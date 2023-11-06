@@ -3,7 +3,7 @@
   justify-content: center;
 }
 .mainPage {
-  background-color: gray;
+  background-color: white;
   max-width: 1200px;
   min-height: 800px;
 }
@@ -17,38 +17,69 @@
   justify-content: space-between;
 }
 .header_text {
-  margin: 100px;
+  margin: 30px;
 }
 .form {
-  height: 50px;
-  border: 1px solid red;
+  height: 60px;
+  background-color: orange;
+  border-radius: 5px;
   display: flex;
   align-items: center;
+}
+.addbtn {
+  width: 150px;
+  margin-left: 300px;
+  height: 30px;
+  border-radius: 15px;
+  border: 0px;
+  color: black;
+}
+.label {
+  margin-left: 30px;
+}
+.input {
+  height: 30px;
+  border-radius: 20px;
+  background-color: white;
+  border: 0px;
 }
 /* working list */
 
 .working {
-  border: 1px solid black;
+  margin-bottom: -20px;
+  padding: 20px;
+  font-size: 30px;
+  font-weight: bold;
 }
 .ing-ListBox {
   display: flex;
   align-items: center;
 
   height: 300px;
-  border: 1px solid blue;
 }
 .card {
-  width: 400px;
-  height: 250px;
-  border: 3px solid black;
+  width: 350px;
+  height: 200px;
+  border: 3px solid orange;
+  border-radius: 30px;
+  padding: 20px;
+  margin-right: 20px;
 }
 
 /* done list */
 
 .done {
-  border: 1px solid black;
+  padding: 20px;
+  font-size: 30px;
 }
 .done-ListBox {
-  border: 1px solid green;
+  display: flex;
+  align-items: center;
   height: 300px;
+}
+.listbtn {
+  margin: 10px 0px 0px 30px;
+  width: 130px;
+  height: 40px;
+  border-radius: 10px;
 }
