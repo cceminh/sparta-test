@@ -1,65 +1,53 @@
-import React, { useState } from "react";
-import "./App.css";
+import { toBeEmptyDOMElement } from "@testing-library/jest-dom/matchers";
+import React from "react";
+import { useState } from "react";
+import uuid from "react-uuid";
+import Input from "./components/Input";
+import TodoList from "./components/TodoList";
 
-function App() {
-  const initialstate = [
+export default function App() {
+  const initialStates = [
     {
-      id: 1,
-      title: "리액트",
-      content: "리액트 공부하기",
+      id: uuid(),
+      title: "제목",
+      contents: "내용",
       isDone: false,
     },
     {
-      id: 2,
-      title: "리액트",
-      content: "리액트 공부하기",
+      id: uuid(),
+      title: "제목",
+      contents: "내용",
       isDone: false,
+    },
+    {
+      id: uuid(),
+      title: "제목",
+      contents: "내용",
+      isDone: true,
     },
   ];
 
-  const [todo, setTodo] = useState(initialstate);
+  const [todos, setTodo] = useState(initialStates);
 
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
   return (
-    <div>
-      제목
-      <input
-        value={title}
-        onChange={(event) => {
-          setTitle(event.target.value);
-        }}
+    <main
+      style={{
+        backgroundColor: "#ebb434",
+      }}
+    >
+      <Input todos={todos} setTodo={setTodo} />
+      <TodoList
+        todos={todos}
+        setTodo={setTodo}
+        listdone={false}
+        btnName={"완료"}
       />
-      내용
-      <input
-        value={content}
-        onChange={(event) => {
-          setContent(event.target.value);
-        }}
+      <TodoList
+        todos={todos}
+        setTodo={setTodo}
+        listdone={true}
+        btnName={"완료취소"}
       />
-      <button
-        onClick={() => {
-          const newTodo = { ...todo };
-        }}
-      >
-        추가하기
-      </button>
-      <div>
-        {todo.map(function (item) {
-          return (
-            <>
-              <div className="working">
-                <h1>{item.id}</h1>
-                <h1>{item.title}</h1>
-                <h2>{item.content}</h2>
-                <h5>{item.isDone}</h5>
-              </div>
-            </>
-          );
-        })}
-      </div>
-    </div>
+    </main>
   );
 }
-
-export default App;
